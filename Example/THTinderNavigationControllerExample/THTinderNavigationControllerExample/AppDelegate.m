@@ -42,7 +42,7 @@
                                                    [[NavigationBarItem alloc] init]
                                                    ];
     
-    
+    [tinderNavigationController setCurrentPage:1 animated:NO];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = tinderNavigationController;
