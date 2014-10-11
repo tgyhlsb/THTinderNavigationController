@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NavigationBarItem.h
 //  THTinderNavigationControllerExample
 //
 //  Created by Tanguy Hélesbeux on 11/10/2014.
@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "THTinderNavigationBar.h"
 
-@interface ViewController : UIViewController
-
+@interface NavigationBarItem : UIView <THTinderNavigationBarItem>
 
 @end
-

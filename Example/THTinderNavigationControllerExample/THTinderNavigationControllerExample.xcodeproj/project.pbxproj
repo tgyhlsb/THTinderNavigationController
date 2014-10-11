@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		5A8B99E319E9975A00ABD090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B99E219E9975A00ABD090 /* main.m */; };
 		5A8B99E619E9975A00ABD090 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B99E519E9975A00ABD090 /* AppDelegate.m */; };
-		5A8B99E919E9975A00ABD090 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B99E819E9975A00ABD090 /* ViewController.m */; };
-		5A8B99EC19E9975A00ABD090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8B99EA19E9975A00ABD090 /* Main.storyboard */; };
 		5A8B99EE19E9975A00ABD090 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8B99ED19E9975A00ABD090 /* Images.xcassets */; };
 		5A8B99F119E9975A00ABD090 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A8B99EF19E9975A00ABD090 /* LaunchScreen.xib */; };
 		5A8B99FD19E9975A00ABD090 /* THTinderNavigationControllerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B99FC19E9975A00ABD090 /* THTinderNavigationControllerExampleTests.m */; };
 		5A8B9A0819E997CF00ABD090 /* THTinderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B9A0719E997CF00ABD090 /* THTinderNavigationController.m */; };
 		5A8B9A0B19E997E800ABD090 /* THTinderNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B9A0A19E997E800ABD090 /* THTinderNavigationBar.m */; };
+		5A8B9A0F19E99B2500ABD090 /* NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B9A0E19E99B2500ABD090 /* NavigationBarItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +33,6 @@
 		5A8B99E219E9975A00ABD090 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A8B99E419E9975A00ABD090 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5A8B99E519E9975A00ABD090 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5A8B99E719E9975A00ABD090 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5A8B99E819E9975A00ABD090 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5A8B99EB19E9975A00ABD090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A8B99ED19E9975A00ABD090 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5A8B99F019E9975A00ABD090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5A8B99F619E9975A00ABD090 /* THTinderNavigationControllerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THTinderNavigationControllerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +42,8 @@
 		5A8B9A0719E997CF00ABD090 /* THTinderNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationController.m; path = ../../../THTinderNavigationController/THTinderNavigationController.m; sourceTree = "<group>"; };
 		5A8B9A0919E997E800ABD090 /* THTinderNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationBar.h; path = ../../../THTinderNavigationController/THTinderNavigationBar.h; sourceTree = "<group>"; };
 		5A8B9A0A19E997E800ABD090 /* THTinderNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationBar.m; path = ../../../THTinderNavigationController/THTinderNavigationBar.m; sourceTree = "<group>"; };
+		5A8B9A0D19E99B2500ABD090 /* NavigationBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarItem.h; sourceTree = "<group>"; };
+		5A8B9A0E19E99B2500ABD090 /* NavigationBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +88,8 @@
 				5A8B9A0C19E997EE00ABD090 /* THTinderNavigationController */,
 				5A8B99E419E9975A00ABD090 /* AppDelegate.h */,
 				5A8B99E519E9975A00ABD090 /* AppDelegate.m */,
-				5A8B99E719E9975A00ABD090 /* ViewController.h */,
-				5A8B99E819E9975A00ABD090 /* ViewController.m */,
-				5A8B99EA19E9975A00ABD090 /* Main.storyboard */,
+				5A8B9A0D19E99B2500ABD090 /* NavigationBarItem.h */,
+				5A8B9A0E19E99B2500ABD090 /* NavigationBarItem.m */,
 				5A8B99ED19E9975A00ABD090 /* Images.xcassets */,
 				5A8B99EF19E9975A00ABD090 /* LaunchScreen.xib */,
 				5A8B99E019E9975A00ABD090 /* Supporting Files */,
@@ -217,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8B99EC19E9975A00ABD090 /* Main.storyboard in Resources */,
 				5A8B99F119E9975A00ABD090 /* LaunchScreen.xib in Resources */,
 				5A8B99EE19E9975A00ABD090 /* Images.xcassets in Resources */,
 			);
@@ -237,8 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8B99E919E9975A00ABD090 /* ViewController.m in Sources */,
 				5A8B9A0B19E997E800ABD090 /* THTinderNavigationBar.m in Sources */,
+				5A8B9A0F19E99B2500ABD090 /* NavigationBarItem.m in Sources */,
 				5A8B99E619E9975A00ABD090 /* AppDelegate.m in Sources */,
 				5A8B99E319E9975A00ABD090 /* main.m in Sources */,
 				5A8B9A0819E997CF00ABD090 /* THTinderNavigationController.m in Sources */,
@@ -264,14 +260,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5A8B99EA19E9975A00ABD090 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A8B99EB19E9975A00ABD090 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A8B99EF19E9975A00ABD090 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -364,6 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = THTinderNavigationControllerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -374,6 +363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = THTinderNavigationControllerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
