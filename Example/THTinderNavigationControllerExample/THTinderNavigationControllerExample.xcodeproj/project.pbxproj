@@ -14,6 +14,8 @@
 		5A8B99EE19E9975A00ABD090 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8B99ED19E9975A00ABD090 /* Images.xcassets */; };
 		5A8B99F119E9975A00ABD090 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A8B99EF19E9975A00ABD090 /* LaunchScreen.xib */; };
 		5A8B99FD19E9975A00ABD090 /* THTinderNavigationControllerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B99FC19E9975A00ABD090 /* THTinderNavigationControllerExampleTests.m */; };
+		5A8B9A0819E997CF00ABD090 /* THTinderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B9A0719E997CF00ABD090 /* THTinderNavigationController.m */; };
+		5A8B9A0B19E997E800ABD090 /* THTinderNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B9A0A19E997E800ABD090 /* THTinderNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		5A8B99F619E9975A00ABD090 /* THTinderNavigationControllerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THTinderNavigationControllerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8B99FB19E9975A00ABD090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A8B99FC19E9975A00ABD090 /* THTinderNavigationControllerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THTinderNavigationControllerExampleTests.m; sourceTree = "<group>"; };
+		5A8B9A0619E997CF00ABD090 /* THTinderNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationController.h; path = ../../../THTinderNavigationController/THTinderNavigationController.h; sourceTree = "<group>"; };
+		5A8B9A0719E997CF00ABD090 /* THTinderNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationController.m; path = ../../../THTinderNavigationController/THTinderNavigationController.m; sourceTree = "<group>"; };
+		5A8B9A0919E997E800ABD090 /* THTinderNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationBar.h; path = ../../../THTinderNavigationController/THTinderNavigationBar.h; sourceTree = "<group>"; };
+		5A8B9A0A19E997E800ABD090 /* THTinderNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationBar.m; path = ../../../THTinderNavigationController/THTinderNavigationBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		5A8B99DF19E9975A00ABD090 /* THTinderNavigationControllerExample */ = {
 			isa = PBXGroup;
 			children = (
+				5A8B9A0C19E997EE00ABD090 /* THTinderNavigationController */,
 				5A8B99E419E9975A00ABD090 /* AppDelegate.h */,
 				5A8B99E519E9975A00ABD090 /* AppDelegate.m */,
 				5A8B99E719E9975A00ABD090 /* ViewController.h */,
@@ -117,6 +124,17 @@
 				5A8B99FB19E9975A00ABD090 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A8B9A0C19E997EE00ABD090 /* THTinderNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				5A8B9A0619E997CF00ABD090 /* THTinderNavigationController.h */,
+				5A8B9A0719E997CF00ABD090 /* THTinderNavigationController.m */,
+				5A8B9A0919E997E800ABD090 /* THTinderNavigationBar.h */,
+				5A8B9A0A19E997E800ABD090 /* THTinderNavigationBar.m */,
+			);
+			name = THTinderNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8B99E919E9975A00ABD090 /* ViewController.m in Sources */,
+				5A8B9A0B19E997E800ABD090 /* THTinderNavigationBar.m in Sources */,
 				5A8B99E619E9975A00ABD090 /* AppDelegate.m in Sources */,
 				5A8B99E319E9975A00ABD090 /* main.m in Sources */,
+				5A8B9A0819E997CF00ABD090 /* THTinderNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
