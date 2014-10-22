@@ -12,7 +12,7 @@ Create a `THTinderNavigationController`.
     THTinderNavigationController *tinderNavigationController = [[THTinderNavigationController alloc] init];
 
 
-`THTinderNavigationController` can take any `UIView` as a navigationBarItem. Just set its `navBarItemViews' property.
+`THTinderNavigationController` can take any `UIView` as a navigationBarItem. Just set its `navBarItemViews` property.
 
 
     tinderNavigationController.navbarItemViews = @[
