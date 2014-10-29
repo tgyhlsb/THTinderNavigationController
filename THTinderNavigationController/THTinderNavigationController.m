@@ -121,7 +121,8 @@ typedef NS_ENUM(NSInteger, THSlideType) {
         return;
     _currentPage = currentPage;
     
-    self.paggingNavbar.currentPage = currentPage;
+    //so that nav bar starts on the middle page
+    self.paggingNavbar.currentPage = currentPage + 1;
     
     [self setupScrollToTop];
     [self callBackChangedPage];
