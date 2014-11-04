@@ -51,18 +51,22 @@
     viewController2.view.backgroundColor = [UIColor whiteColor];
     UIViewController *viewController3 = [[UIViewController alloc] init];
     viewController3.view.backgroundColor = [UIColor blueColor];
+    UIViewController *viewController4 = [[UIViewController alloc] init];
+    viewController4.view.backgroundColor = [UIColor purpleColor];
     
     self.paggingVC.paggedViewControllers = @[
-                                                         viewController1,
-                                                         viewController2,
-                                                         viewController3
-                                                         ];
+                                             viewController1,
+                                             viewController2,
+                                             viewController3,
+                                             viewController4
+                                             ];
     
     self.paggingVC.paggedIconViews = @[
-                                                   [[NavigationBarItem alloc] init],
-                                                   [[NavigationBarItem alloc] init],
-                                                   [[NavigationBarItem alloc] init]
-                                                   ];
+                                       [[NavigationBarItem alloc] init],
+                                       [[NavigationBarItem alloc] init],
+                                       [[NavigationBarItem alloc] init],
+                                       [[NavigationBarItem alloc] init]
+                                       ];
     
     [self.paggingVC setCurrentPage:1 animated:NO];
     [self setViewControllers:@[self.paggingVC]];
