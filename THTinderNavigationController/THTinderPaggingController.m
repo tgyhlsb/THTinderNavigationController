@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Tanguy Hélesbeux. All rights reserved.
 //
 
-#import "THTinderNavigationController.h"
+#import "THTinderPaggingController.h"
 #import "THTinderNavigationBar.h"
 
 typedef NS_ENUM(NSInteger, THSlideType) {
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
     THSlideTypeRight = 1,
 };
 
-@interface THTinderNavigationController () <UIScrollViewDelegate>
+@interface THTinderPaggingController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIView *centerContainerView;
 @property (nonatomic, strong) UIScrollView *paggingScrollView;
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
 
 @end
 
-@implementation THTinderNavigationController
+@implementation THTinderPaggingController
 
 #pragma mark - DataSource
 

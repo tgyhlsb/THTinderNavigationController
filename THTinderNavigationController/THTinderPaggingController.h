@@ -10,7 +10,7 @@
 
 typedef void(^THDidChangedPageBlock)(NSInteger currentPage, NSString *title);
 
-@interface THTinderNavigationController : UIViewController
+@interface THTinderPaggingController : UIViewController
 
 @property (nonatomic, copy) THDidChangedPageBlock didChangedPageCompleted;
 

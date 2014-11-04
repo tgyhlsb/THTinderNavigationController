@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "THTinderNavigationController.h"
+#import "THTinderPaggingController.h"
 #import "NavigationBarItem.h"
 
 @interface AppDelegate ()
@@ -21,7 +21,7 @@
 {
     // Override point for customization after application launch.
     
-    THTinderNavigationController *tinderNavigationController = [[THTinderNavigationController alloc] init];
+    THTinderPaggingController *tinderNavigationController = [[THTinderPaggingController alloc] init];
     
     UIViewController *viewController1 = [[UIViewController alloc] init];
     viewController1.view.backgroundColor = [UIColor redColor];

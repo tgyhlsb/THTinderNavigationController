@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "THTinderNavigationController.h"
+#import "THTinderPaggingController.h"
 
 @interface THTinderNavigationBar : UINavigationBar
 
@@ -17,7 +17,7 @@
 
 @property (nonatomic, assign) CGPoint contentOffset;
 
-@property (strong, nonatomic) THTinderNavigationController *navigationController;
+@property (strong, nonatomic) THTinderPaggingController *navigationController;
 
 - (void)reloadData;
 
