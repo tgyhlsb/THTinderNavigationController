@@ -15,7 +15,7 @@ typedef void(^THDidChangedPageBlock)(NSInteger currentPage, NSString *title);
 @property (nonatomic, copy) THDidChangedPageBlock didChangedPageCompleted;
 
 @property (nonatomic, strong) NSArray *paggedViewControllers;
-@property (nonatomic, strong) NSArray *navbarItemViews;
+@property (nonatomic, strong) NSArray *paggedIconViews;
 
 - (instancetype)initWithLeftViewController:(UIViewController *)leftViewController;
 

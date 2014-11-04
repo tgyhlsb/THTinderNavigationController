@@ -36,7 +36,7 @@
                                                    viewController3
                                                    ];
     
-    tinderNavigationController.navbarItemViews = @[
+    tinderNavigationController.paggedIconViews = @[
                                                    [[NavigationBarItem alloc] init],
                                                    [[NavigationBarItem alloc] init],
                                                    [[NavigationBarItem alloc] init]

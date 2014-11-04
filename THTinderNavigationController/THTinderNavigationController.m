@@ -63,7 +63,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
     
     [self.paggingScrollView setContentSize:CGSizeMake(CGRectGetWidth(self.view.bounds) * self.paggedViewControllers.count, 0)];
     
-    self.paggingNavbar.itemViews = self.navbarItemViews;
+    self.paggingNavbar.itemViews = self.paggedIconViews;
     [self.paggingNavbar reloadData];
     
     [self setupScrollToTop];
@@ -102,7 +102,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
         _paggingNavbar = [[THTinderNavigationBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 64)];
         _paggingNavbar.backgroundColor = [UIColor clearColor];
         _paggingNavbar.navigationController = self;
-        _paggingNavbar.itemViews = self.navbarItemViews;
+        _paggingNavbar.itemViews = self.paggedIconViews;
         [self.view addSubview:_paggingNavbar];
     }
     return _paggingNavbar;
@@ -128,9 +128,9 @@ typedef NS_ENUM(NSInteger, THSlideType) {
     [self callBackChangedPage];
 }
 
-- (void)setNavbarItemViews:(NSArray *)navbarItemViews
+- (void)setPaggedIconViews:(NSArray *)navbarItemViews
 {
-    _navbarItemViews = navbarItemViews;
+    _paggedIconViews = navbarItemViews;
     self.paggingNavbar.itemViews = navbarItemViews;
 }
 
