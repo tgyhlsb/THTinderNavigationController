@@ -32,15 +32,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setUpNavbar];
+    [self setNavbarVisible:NO];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIViewController *destination = [UIViewController new];
+        destination.view.backgroundColor = [UIColor yellowColor];
+        [self pushViewController:destination animated:YES];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            UIViewController *destination = [UIViewController new];
+            destination.view.backgroundColor = [UIColor yellowColor];
+            [self pushViewController:destination animated:YES];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                UIViewController *destination = [UIViewController new];
+                destination.view.backgroundColor = [UIColor yellowColor];
+                [self pushViewController:destination animated:YES];
+            });
+        });
+    });
 }
 
 #pragma mark - View set up
 
-- (void)setUpNavbar
+- (void)setNavbarVisible:(BOOL)visible
 {
-    self.navigationBar.translucent = YES;
-    self.navigationBarHidden = YES;
+    self.navigationBarHidden = !visible;
 }
 
 - (void)setUpPaggingViewController
@@ -80,6 +97,21 @@
         _paggingVC = [[THTinderPaggingController alloc] init];
     }
     return _paggingVC;
+}
+
+#pragma mark - Segues
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [self setNavbarVisible:YES];
+    [super pushViewController:viewController animated:animated];
+}
+
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated
+{
+    UIViewController *destination = [super popViewControllerAnimated:animated];
+    [self setNavbarVisible:([self.viewControllers count] > 1)];
+    return destination;
 }
 
 @end
