@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "THTinderPaggingController.h"
-#import "NavigationBarItem.h"
+#import "THTinderNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -21,28 +20,7 @@
 {
     // Override point for customization after application launch.
     
-    THTinderPaggingController *tinderNavigationController = [[THTinderPaggingController alloc] init];
-    
-    UIViewController *viewController1 = [[UIViewController alloc] init];
-    viewController1.view.backgroundColor = [UIColor redColor];
-    UIViewController *viewController2 = [[UIViewController alloc] init];
-    viewController2.view.backgroundColor = [UIColor whiteColor];
-    UIViewController *viewController3 = [[UIViewController alloc] init];
-    viewController3.view.backgroundColor = [UIColor blueColor];
-    
-    tinderNavigationController.paggedViewControllers = @[
-                                                   viewController1,
-                                                   viewController2,
-                                                   viewController3
-                                                   ];
-    
-    tinderNavigationController.paggedIconViews = @[
-                                                   [[NavigationBarItem alloc] init],
-                                                   [[NavigationBarItem alloc] init],
-                                                   [[NavigationBarItem alloc] init]
-                                                   ];
-    
-    [tinderNavigationController setCurrentPage:1 animated:NO];
+    THTinderNavigationController *tinderNavigationController = [[THTinderNavigationController alloc] init];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = tinderNavigationController;
