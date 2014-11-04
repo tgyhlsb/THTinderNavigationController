@@ -30,7 +30,7 @@
     UIViewController *viewController3 = [[UIViewController alloc] init];
     viewController3.view.backgroundColor = [UIColor blueColor];
     
-    tinderNavigationController.viewControllers = @[
+    tinderNavigationController.paggedViewControllers = @[
                                                    viewController1,
                                                    viewController2,
                                                    viewController3

@@ -47,13 +47,13 @@ typedef NS_ENUM(NSInteger, THSlideType) {
 }
 
 - (void)reloadData {
-    if (!self.viewControllers.count) {
+    if (!self.paggedViewControllers.count) {
         return;
     }
     
     [self.paggingScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
+    [self.paggedViewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
         CGRect contentViewFrame = viewController.view.bounds;
         contentViewFrame.origin.x = idx * CGRectGetWidth(self.view.bounds);
         viewController.view.frame = contentViewFrame;
@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
         [self addChildViewController:viewController];
     }];
     
-    [self.paggingScrollView setContentSize:CGSizeMake(CGRectGetWidth(self.view.bounds) * self.viewControllers.count, 0)];
+    [self.paggingScrollView setContentSize:CGSizeMake(CGRectGetWidth(self.view.bounds) * self.paggedViewControllers.count, 0)];
     
     self.paggingNavbar.itemViews = self.navbarItemViews;
     [self.paggingNavbar reloadData];
@@ -109,8 +109,8 @@ typedef NS_ENUM(NSInteger, THSlideType) {
 }
 
 - (UIViewController *)getPageViewControllerAtIndex:(NSInteger)index {
-    if (index < self.viewControllers.count) {
-        return self.viewControllers[index];
+    if (index < self.paggedViewControllers.count) {
+        return self.paggedViewControllers[index];
     } else {
         return nil;
     }
@@ -201,7 +201,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
     
     self.paggingNavbar = nil;
     
-    self.viewControllers = nil;
+    self.paggedViewControllers = nil;
     
     self.didChangedPageCompleted = nil;
 }
@@ -241,14 +241,14 @@ typedef NS_ENUM(NSInteger, THSlideType) {
 
 - (void)callBackChangedPage {
     if (self.didChangedPageCompleted) {
-        self.didChangedPageCompleted(self.currentPage, [[self.viewControllers valueForKey:@"title"] objectAtIndex:self.currentPage]);
+        self.didChangedPageCompleted(self.currentPage, [[self.paggedViewControllers valueForKey:@"title"] objectAtIndex:self.currentPage]);
     }
 }
 
 #pragma mark - TableView Helper Method
 
 - (void)setupScrollToTop {
-    for (int i = 0; i < self.viewControllers.count; i ++) {
+    for (int i = 0; i < self.paggedViewControllers.count; i ++) {
         UITableView *tableView = (UITableView *)[self subviewWithClass:[UITableView class] onView:[self getPageViewControllerAtIndex:i].view];
         if (tableView) {
             if (self.currentPage == i) {
