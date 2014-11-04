@@ -33,11 +33,23 @@
     }
     
     [self.itemViews enumerateObjectsUsingBlock:^(UIView<THTinderNavigationBarItem> *itemView, NSUInteger idx, BOOL *stop) {
-        CGRect itemViewFrame = CGRectMake(MARGIN_LEFT + (idx * (kXHiPad ? 240 : STEP)), Y_POSITION, IMAGESIZE, IMAGESIZE);
+        
+        //dyanmically get the width with 15px side margins
+        float wid = (WIDTH - 30);
+        float step = wid/2 * idx;
+        if (idx == 0) {
+            //add left margin to the first idx
+            step += 15;
+        } else if (idx == 2){
+            //add right margin to the last idx
+            step -= 15;
+        }
+        
+        CGRect itemViewFrame = CGRectMake(step, Y_POSITION, IMAGESIZE, IMAGESIZE);
         itemView.hidden = NO;
         itemView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         itemView.frame = itemViewFrame;
-        if (self.currentPage == idx) {
+        if (self.currentPage + 1 == idx) {
             [itemView updateViewWithRatio:1.0];
         } else {
             [itemView updateViewWithRatio:0.0];
@@ -61,8 +73,20 @@
     CGFloat normalWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
     
     [self.itemViews enumerateObjectsUsingBlock:^(UIView<THTinderNavigationBarItem> *itemView, NSUInteger idx, BOOL *stop) {
+        
+        //dyanmically get the width with 15px side margins
+        float wid = (WIDTH - 30);
+        float step = wid/2 * idx;
+        if (idx == 0) {
+            //add left margin to the first idx
+            step += 15;
+        } else if (idx == 2){
+            //add right margin to the last idx
+            step -= 15;
+        }
+        
         CGRect itemViewFrame = itemView.frame;
-        itemViewFrame.origin.x = MARGIN_LEFT + (idx * (kXHiPad ? 240 : STEP)) - xOffset / SPEED;
+        itemViewFrame.origin.x = step - (xOffset - normalWidth) / SPEED;
         itemView.frame = itemViewFrame;
         
         CGFloat ratio;
