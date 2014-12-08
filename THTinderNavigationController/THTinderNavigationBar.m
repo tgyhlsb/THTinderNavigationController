@@ -50,9 +50,9 @@
         itemView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         itemView.frame = itemViewFrame;
         if (self.currentPage + 1 == idx) {
-            [itemView updateViewWithRatio:1.0];
+            [self updateItemView:itemView withRatio:1.0];
         } else {
-            [itemView updateViewWithRatio:0.0];
+            [self updateItemView:itemView withRatio:0.0];
         }
     }];
 }
@@ -61,6 +61,14 @@
 {
     NSInteger pageIndex = [self.itemViews indexOfObject:tapGesture.view];
     [self.navigationController setCurrentPage:pageIndex animated:YES];
+}
+
+#pragma mark - Other
+
+- (void)updateItemView:(UIView<THTinderNavigationBarItem> *)itemView withRatio:(CGFloat)ratio {
+    if ([itemView respondsToSelector:@selector(updateViewWithRatio:)]) {
+        [itemView updateViewWithRatio:ratio];
+    }
 }
 
 #pragma mark - Propertys
@@ -95,7 +103,8 @@
         }else{
             ratio = 1 - ((xOffset - normalWidth * idx) / normalWidth);
         }
-        [itemView updateViewWithRatio:ratio];
+        
+        [self updateItemView:itemView withRatio:ratio];
     }];
 }
 
