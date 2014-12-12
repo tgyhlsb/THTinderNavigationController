@@ -242,7 +242,8 @@ typedef NS_ENUM(NSInteger, THSlideType) {
 
 - (void)callBackChangedPage {
     if (self.didChangedPageCompleted) {
-        self.didChangedPageCompleted(self.currentPage, [[self.paggedViewControllers valueForKey:@"title"] objectAtIndex:self.currentPage]);
+        UIViewController *currentViewController = self.paggedViewControllers[self.currentPage];
+        self.didChangedPageCompleted(self.currentPage, currentViewController.title);
     }
 }
 
