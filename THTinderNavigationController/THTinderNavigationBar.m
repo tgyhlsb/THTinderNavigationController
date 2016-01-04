@@ -8,15 +8,8 @@
 
 #import "THTinderNavigationBar.h"
 
-#define kXHiPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-
-#define kXHLabelBaseTag 1000
-
-#define MARGIN_LEFT 145
 #define WIDTH self.bounds.size.width
 #define IMAGESIZE 30
-#define STEP 130
-#define SPEED 2.45
 #define Y_POSITION 28
 
 @interface THTinderNavigationBar ()
@@ -34,9 +27,7 @@
     
     [self.itemViews enumerateObjectsUsingBlock:^(UIView<THTinderNavigationBarItem> *itemView, NSUInteger idx, BOOL *stop) {
         
-        //dyanmically get the width with 15px side margins
-        CGFloat width = (WIDTH - 30);
-        CGFloat step = (width / 2 - 15) * idx + 15;
+        CGFloat step = [self getStepSizeWithWidth:WIDTH andIndex:idx];
         
         CGRect itemViewFrame = CGRectMake(step, Y_POSITION, IMAGESIZE, IMAGESIZE);
         itemView.hidden = NO;
@@ -64,6 +55,11 @@
     }
 }
 
+- (CGFloat) getStepSizeWithWidth:(CGFloat)width andIndex:(NSUInteger)idx{
+    
+    return (width / 2) * idx;
+}
+
 #pragma mark - Properties
 
 - (void)setContentOffset:(CGPoint)contentOffset {
@@ -71,24 +67,24 @@
     
     CGFloat xOffset = contentOffset.x;
     
-    CGFloat normalWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
-    
     [self.itemViews enumerateObjectsUsingBlock:^(UIView<THTinderNavigationBarItem> *itemView, NSUInteger idx, BOOL *stop) {
         
-        //dyanmically get the width with 15px side margins
-        CGFloat width = (WIDTH - 30);
-        CGFloat step = (width / 2 - 15) * idx + 15;
+        CGFloat step = [self getStepSizeWithWidth:WIDTH andIndex:idx];
         
         CGRect itemViewFrame = itemView.frame;
-        itemViewFrame.origin.x = step - (xOffset - normalWidth) / SPEED;
-        itemView.frame = itemViewFrame;
+        
+        itemViewFrame.origin.x = step - ((xOffset - WIDTH) / 2) - (IMAGESIZE/2);
         
         CGFloat ratio;
-        if(xOffset < normalWidth * idx) {
-            ratio = (xOffset - normalWidth * (idx - 1)) / normalWidth;
+        if(xOffset < WIDTH * idx) {
+            ratio = (xOffset - WIDTH * (idx - 1)) / WIDTH;
+            itemViewFrame.origin.x -= IMAGESIZE * (1-ratio);
         }else{
-            ratio = 1 - ((xOffset - normalWidth * idx) / normalWidth);
+            ratio = 1 - ((xOffset - WIDTH * idx) / WIDTH);
+            itemViewFrame.origin.x += IMAGESIZE * (1-ratio);
         }
+        
+        itemView.frame = itemViewFrame;
         
         [self updateItemView:itemView withRatio:ratio];
     }];
